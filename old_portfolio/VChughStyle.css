@@ -1,0 +1,93 @@
+/* Style sheet for Scholars SGC web page */
+
+/* General instructions for font, color, and background image */
+body {
+	font-family: Georgia, serif;
+	color: #344152;
+	margin: 10px;
+	background: LavenderBlush;
+}
+
+
+/* Paragraph break height */
+p {
+	line-height: 1.4em;
+	color: black
+}
+
+
+/* Heading fonts/formatting */
+h2 {
+	font-family: Didot, serif;
+	color: black;
+	font-size: 2em;
+	margin: 0;
+	padding: 0.1em;
+	padding-left: 1em;
+	text-align: center;
+	font-weight: plain;
+}
+
+h6 {
+	font-family: Didot, serif;
+	color: black;
+	font-size: 0.75em;
+	margin: 0;
+	padding: 0.1em;
+	padding-left: 1em;
+	text-align: center;
+	font-weight: plain;
+}
+
+/* Margins and alignment for images */					
+#content img {
+			padding: 1px;
+			float: right;
+			margin: 0 0 1em 1em;
+		}
+a {
+	text-decoration: none;
+}
+
+/* Colors for linked text, before and after being clicked */			
+a:link {
+	color: #1C86EE;
+}
+
+a:visited {
+	color: #104E8B;
+}
+
+
+/* Page Layout */
+
+#header {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	}
+
+#content {
+	margin-top: 10px; 
+}
+
+/* Layout for divisions containing images and their captions */
+#picture {
+	padding: 1px;
+	float: right;
+	text-align: center;
+	font-size: 8pt;
+	margin: 0 0 1em 1em;
+}
+/* Layout for alignment of footer */
+
+#footer {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+
+#footer img {
+	padding: 10px;
+}

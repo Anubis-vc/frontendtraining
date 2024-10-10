@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+	<head>
+		<meta charset = "utf-8">
+		<meta name = "author" content = "Ved Chugh">
+		<meta name = 'description' content = 'messing around with html'>
+		<title>Taco Shop</title>
+		<link rel="icon" href="favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" href="../../css_review/basic_css.css">
+	</head>
+
+	<body>
+		<header>
+			<h1>Welcome to Taco Shop</h1>
+			<nav>
+				<ul>
+					<li>
+						<a href="#about">About <abbr title="Taco Shop">TS</abbr></a>
+					</li>
+					<li>
+						<a href="#menu">Our Menu</a>
+					</li>
+					<li>
+						<a href="./hours.html">Hours</a>
+					</li>
+					<li>
+						<a href="./contact.html">Contact</a>
+					</li>
+				</ul>
+			</nav>
+			<figure>
+				<img src="img/tacodrink.jpg" alt="Tacos and a Drink" 
+				title="Tacos" width="400" height="267">
+				<figcaption>Tacos and a Drink</figcaption>
+			</figure>
+		</header>
+		<hr>
+		<main>
+			<article id="about">
+				<h2>About <abbr title="Taco Shop">TS</abbr></h2>
+				<p>
+					<abbr title="Taco Shop">TS</abbr> was founded in 
+					<time datetime="2024">2024</time>. Our shop was built on 
+					<strong>html</strong>.
+				</p>
+				<aside>
+					<h3>Taco Trivia</h3>
+					<details>
+						<summary>
+							When did tacos first appear in the United States?
+						</summary>
+						<p>
+							Earliest mention of Tacos in the United States are in
+							a newspaper from <time datetime="1905"></time>.
+							(Source: <cite>
+								<a href="https://www.smithsonianmag.com/arts-culture/where-did-the-taco-come-from-81228162/"
+								target="_blank">Smithsonian Magazine</a>
+							</cite>)
+						</p>
+					</details>
+				</aside>
+			</article>
+			<hr>
+			<article id="menu">
+				<h2>Our Menu</h2>
+				<table>
+					<caption>Our Tacos</caption>
+					<thead>
+						<tr>
+							<th>Tacos</th>
+							<th scope="col"><abbr title="Quantity">Qty</abbr></th>
+							<th scope="col">Price</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row" rowspan="3">
+								Hard Shell
+							</th>
+							<td>1</td>
+							<td>$1.50</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>$2.50</td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>$3.25</td>
+						</tr>
+						<tr>
+							<th scope="row" rowspan="3">
+								Soft Shell
+							</th>
+							<td>1</td>
+							<td>$1.25</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>$2</td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>$2.75</td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr>
+							<td colspan="3">
+								Chips &amp; salsa $2
+							</td>
+						</tr>
+					</tfoot>
+				</table>
+				<br>
+				<p>
+					<a href="#">Back to top</a>
+				</p>
+			</article>
+		</main>
+		<hr>
+		<footer>
+			<p>Copyrght &copy; Taco Shop</p>
+		</footer>
+	</body>
+
+</html>

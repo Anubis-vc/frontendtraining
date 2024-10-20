@@ -1,0 +1,77 @@
+:root {
+	--Primary: #C5F82A;
+	--White: #fff;
+	--Grey: #333333;
+	--DarkGrey: #1F1F1F;
+	--Black: #141414;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	max-width: 100%;
+	background-color: var(--Black);
+	color: var(--White);
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+main {
+	max-width: 1440px;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 20px;
+	color: var(--White);
+}
+
+.content {
+	background-color: var(--DarkGrey);
+	margin: auto;
+	padding: 28px 32px;
+	border-radius: 10px;
+}
+
+.intro {
+	line-height: 2rem;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+}
+
+.intro img {
+	height: 75px;
+	width: 75px;
+	object-fit: cover;
+	border-radius: 50%;
+	margin-bottom: 15px;
+}
+
+.socials {
+	display: flex;
+	flex-direction: column;
+}
+
+.button {
+	background-color: var(--Grey);
+	color: var(--White);
+	padding: 0.6rem 0.8rem;
+	border-radius: 0.4rem;
+	margin-bottom: 0.6rem;
+	font-weight: bold;
+	border: none;
+}
+.button:hover {
+	background-color: var(--Primary);
+	color: var(--Black);
+}

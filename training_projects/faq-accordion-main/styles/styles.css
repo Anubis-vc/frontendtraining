@@ -58,7 +58,7 @@ img {
 }
 
 .accordian-item {
-	padding: 1rem 0;
+	padding: 0 0;
 }
 
 .accordian-header {
@@ -73,7 +73,9 @@ img {
 	justify-content: space-between;
 	font-weight: bold;
 	font-size: large;
-	padding: 0rem 1rem;
+	padding: 1rem 1rem;
+	margin: 0;
+	cursor: pointer;
 }
 
 .minus {
@@ -86,6 +88,14 @@ img {
 	max-height: 0;
 	overflow: hidden;
 	transition: max-height 200ms ease;
+	margin:0;
+}
+
+.inner {
+	padding-left: 1rem;
+	padding-right: 1rem;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
 }
 
 footer {

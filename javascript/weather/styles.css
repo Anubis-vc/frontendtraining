@@ -36,7 +36,7 @@ body {
 	border-radius: 1.5rem;
 	flex: 1;
 	margin-right: 1rem;
-	font-size: 0.8rem;
+	font-size: 1rem;
 }
 
 .search button {
@@ -91,4 +91,17 @@ h2 {
 .humidity, .wind {
 	font-size: 1.4rem;
 	margin-top: -0.2rem;
+}
+
+.weather {
+	display: none;
+}
+
+.error {
+	text-align: left;
+	margin-left: 1rem;
+	font-size: 1rem;
+	margin-top: 0.5rem;
+	color: #FF474C;
+	display: none;
 }

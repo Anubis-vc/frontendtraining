@@ -50,6 +50,7 @@ body {
 	outline: none;
 	background: transparent;
 	font-size: 16px;
+	padding-left: 1rem;
 }
 
 .row button {
@@ -94,4 +95,22 @@ ul li.checked {
 
 ul li.checked::before {
 	background-image: url(./images/checked.png);
+}
+
+ul li span {
+	position: absolute;
+	right: 0;
+	width: 2rem;
+	height: 2rem;
+	font-size: 16px;
+	color: #666666;
+	line-height: 2rem;
+	text-align: center;
+	margin-top: -0.25rem;
+	margin-right: 1rem;
+	border-radius: 2rem;
+}
+
+ul li span:hover {
+	background-color: #CDCDCD;
 }

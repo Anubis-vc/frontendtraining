@@ -53,12 +53,15 @@ h2 {
 	margin-top: 1rem;
 	transition: background 0.25s;
 }
-.btn:hover {
+.btn:hover:not([disabled]) {
 	background: gray;
 	color: white;
 }
+.btn:disabled {
+	cursor: text;
+}
 
-.next {
+#next {
 	background-color: #001e4d;
 	color: white;
 	font-weight: 500;
@@ -71,4 +74,11 @@ h2 {
 	border-radius: 4px;
 	cursor: pointer;
 	display: none;
+}
+
+.correct {
+	background: #9aeabc;
+}
+.incorrect {
+	background: #ff9393;
 }

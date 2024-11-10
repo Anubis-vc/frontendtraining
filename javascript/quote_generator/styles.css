@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Cormorant Garamond", serif;;
+}
+
+:root {
+	--Primary: #bbc6fa;
+	--Secondary: #177ce5;
+
+}
+
+body {
+	background: var(--Primary);
+}
+
+.quote-box {
+	background: white;
+	width: 38rem;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	padding: 2rem;
+	border-radius: 10px;
+	text-align: center;
+	box-shadow: 0 0.75rem 1.5rem 0 rgba(0, 0, 0, 0.15);
+	transform: translate(-50%, -50%);
+}
+
+h1 {
+	font-size: 35px;
+	margin-bottom: 0.5rem;
+}
+
+hr {
+	margin-bottom: 2rem;
+	color: var(--Secondary);
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	border: none;
+	height: 3px;
+	background-color: var(--Secondary);
+	border-radius: 10px;
+}
+
+.quote-box blockquote {
+	font-size: 26px;
+	min-height: 6rem;
+}
+.quote-box blockquote::before, .quote-box blockquote::after {
+	content: '"'
+}
+
+.quote-box span {
+	display: block;
+	margin-top: 1rem;
+	margin-bottom: 1.75rem;
+	float: right;
+	position: relative;
+}
+.quote-box span::before {
+	content: '';
+	width: 1.1rem;
+	height: 1.5px;
+	position: absolute;
+	background: var(--Secondary);
+	top: 50%;
+	left: -38%;
+}
+
+.buttons {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.buttons button {
+	background: var(--Secondary);
+	color: white;
+	border-radius: 2rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 3rem;
+	width: 9rem;
+	border: none;
+	margin: 0.3rem;
+	cursor: pointer;
+	font-size: 16px;
+	border: 1px solid var(--Secondary);
+}
+
+.buttons button img {
+	width: 3.2rem;
+	margin-right: -0.3rem;
+}
+
+.buttons button:nth-child(2) {
+	background: transparent;
+	color: var(--Secondary);
+}

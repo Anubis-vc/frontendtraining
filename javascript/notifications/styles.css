@@ -1,0 +1,51 @@
+* {
+	padding: 0;
+	margin: 0;
+	font-family: 'Courier New', Courier, monospace;
+	box-sizing: border-box;
+}
+
+body {
+	background: #f7edff;
+}
+
+.buttons {
+	margin: auto;
+	margin-top: 10rem;
+	max-width: fit-content;
+	border: 4px solid #A7C7E7;
+	padding: 4rem;
+}
+
+button {
+	width: 10rem;
+	height: 3.3rem;
+	font-size: 15px;
+	cursor: pointer;
+}
+
+.success {
+	background: #C1E1C1;
+	color: black;
+}
+
+.error {
+	background: #FAA0A0;
+	color: black;
+}
+
+.invalid {
+	background: #FFFAA0;
+	color: black;
+}
+
+.toast-box {
+	position: absolute;
+	bottom: 2rem;
+	right: 2rem;
+	display: flex;
+	align-items: flex-end;
+	flex-direction: column;
+	overflow: hidden;
+	padding: 1rem;
+}

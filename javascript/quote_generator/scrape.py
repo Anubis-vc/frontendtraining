@@ -1,5 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
+from flask import Flask, jsonify
+from flask_cors import CORS
 
 # URL of the website
 headers = {
@@ -13,18 +15,26 @@ response.raise_for_status()
 soup = BeautifulSoup(response.text, 'html.parser')
 
 # Find the section containing the quotes
-quotes = soup.select('.container p')
-quotes
+quotes = soup.select('.single_list')
 
-# List to store the extracted quotes and their sources
-# movie_quotes = []
+movie_quotes = []
+for elt in quotes:
+	movie_quotes.append((elt.find('h6').get_text(strip=True), 
+					  elt.find('p').get_text(strip=True)))
+	
+for i in range(len(movie_quotes)):
+	temp = movie_quotes[i][0].split('"')[1]
+	temp = temp[0: str.find(temp, '"')]
+	movie_quotes[i] = (temp, movie_quotes[i][1])
+res = movie_quotes[:100]
 
-# for quote in quotes:
-#     text = quote.get_text()
-#     if ' – ' in text:
-#         quote_text, source = text.split(' – ')
-#         movie_quotes.append({'quote': quote_text.strip(), 'source': source.strip()})
+app = Flask(__name__)
+CORS(app)
 
-# # Print each quote with its source
-# for entry in movie_quotes:
-#     print(f"Quote: {entry['quote']}\nSource: {entry['source']}\n")
+@app.route('/calculate')
+def calculate():
+	result = {"value": res}
+	return jsonify(result)
+
+if __name__ == '__main__':
+	app.run(debug=True)

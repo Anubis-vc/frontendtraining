@@ -1,3 +1,13 @@
+// const resultData = fetch('http://127.0.0.1:5000/calculate').then(response => response.json());
+let resultData = null;
+fetch('http://127.0.0.1:5000/calculate')
+	.then(response => response.json())
+	.then(data => {
+		resultData = data;
+		// console.log(data)
+		// document.getElementById('quote').innerHTML = data.value[0]
+	})
+	.catch(error => console.error('Error: ', error))
 const newQuote = document.getElementById("new-quote");
 const quote = document.getElementById("quote");
 const author = document.getElementById("author");
@@ -16,11 +26,9 @@ const options = {
 
 async function fetchQuote() {
 	try {
-		const response = await fetch(url, options);
-		const result = await response.text();
-		console.log(result);
-		quote.innerHTML = result.content
-		author.innerHTML = result.author
+		const index = Math.floor(Math.random() * 100)
+		quote.innerHTML = resultData["value"][index][0]
+		author.innerHTML = resultData["value"][index][1]
 	} catch (error) {
 		console.error(error);
 	}

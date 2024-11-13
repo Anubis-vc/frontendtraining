@@ -49,7 +49,7 @@ hr {
 }
 
 .quote-box blockquote {
-	font-size: 26px;
+	font-size: 30px;
 	min-height: 6rem;
 }
 .quote-box blockquote::before, .quote-box blockquote::after {
@@ -58,6 +58,7 @@ hr {
 
 .quote-box span {
 	display: block;
+	max-width: 10rem;
 	margin-top: 1rem;
 	margin-bottom: 1.75rem;
 	float: right;
@@ -70,7 +71,7 @@ hr {
 	position: absolute;
 	background: var(--Secondary);
 	top: 50%;
-	left: -38%;
+	left: -25%;
 }
 
 .buttons {

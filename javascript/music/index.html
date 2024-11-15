@@ -25,7 +25,7 @@
 			<h1>The Man in Me</h1>
 			<p>Bob Dylan</p>
 
-			<audio controls>
+			<audio id="song">
 				<source src="./media/Bob Dylan - The Man in Me (Official Audio).mp3" 
 				type="audio/mpeg">
 			</audio>
@@ -33,12 +33,57 @@
 
 			<div class="controls">
 				<div class="back"><i class="fa-solid fa-backward"></i></div>
-				<div class="play"><i class="fa-solid fa-play"></i></div>
+				<div onclick="playPause()" class="play"><i class="fa-solid fa-play" id="ctrl"></i></div>
 				<div class="forward"><i class="fa-solid fa-forward"></i></div>
 			</div>
 
 		</div>
 	</div>
+
+	<script>
+		let seeking = document.getElementById("seeking");
+		let song = document.getElementById("song")
+		let ctrl = document.getElementById('ctrl')
+
+		song.onloadedmetadata = () => {
+			seeking.max = song.duration;
+			seeking.value = song.currentTime;
+		}
+
+		// toggle pause and play button
+		const playPause = () => {
+			if (ctrl.classList.contains("fa-pause")) {
+				song.pause();
+				ctrl.classList.remove("fa-pause");
+				ctrl.classList.add("fa-play");
+			}
+			else {
+				song.play();
+				ctrl.classList.add("fa-pause");
+				ctrl.classList.remove("fa-play");
+			}
+		}
+
+		// update progress bar
+		try {
+			if (song.play()) {
+				setInterval(() => {
+					seeking.value = song.currentTime;
+				}, 300);
+			}
+
+			// update song location based on progress bar change
+			seeking.onchange = () => {
+				song.play();
+				song.currentTime = seeking.value;
+				ctrl.classList.add("fa-pause");
+				ctrl.classList.remove("fa-play");
+			}
+		}
+		catch(err) {
+			console.error(err);
+		}
+	</script>
 
 </body>
 </html>

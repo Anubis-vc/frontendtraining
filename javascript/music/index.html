@@ -5,10 +5,40 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="./styles.css">
 	<title>Music Player</title>
+
+	<script src="https://kit.fontawesome.com/71b0967a87.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
 	
-	
+	<div class="container">
+		<div class="music-player">
+			<nav>
+				<div class="circle">
+					<i class="fa-solid fa-angle-left"></i>
+				</div>
+				<div class="circle">
+					<i class="fa-solid fa-bars"></i>
+				</div>
+			</nav>
+			<img src="./media/dylan-1.jpg" alt="Bob Dylan" class="song-img">
+			<h1>The Man in Me</h1>
+			<p>Bob Dylan</p>
+
+			<audio controls>
+				<source src="./media/Bob Dylan - The Man in Me (Official Audio).mp3" 
+				type="audio/mpeg">
+			</audio>
+			<input type="range" value="0" id="seeking">
+
+			<div class="controls">
+				<div class="back"><i class="fa-solid fa-backward"></i></div>
+				<div class="play"><i class="fa-solid fa-play"></i></div>
+				<div class="forward"><i class="fa-solid fa-forward"></i></div>
+			</div>
+
+		</div>
+	</div>
 
 </body>
 </html>

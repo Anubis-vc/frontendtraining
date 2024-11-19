@@ -1,6 +1,9 @@
 let time = {hours: 0, minutes: 0, seconds: 0};
 let timeDisplay = document.getElementById("timer");
 let startButton = document.getElementById("main");
+let stopBtn = document.getElementById("stop");
+let resetBtn = document.getElementById("reset");
+
 let timer = null;
 
 const stopwawtch = () => {
@@ -24,12 +27,19 @@ const stopwawtch = () => {
 
 const startTimer = () => {
 	if (timer !== null) {
-		clearInterval(timer)
+		clearInterval(timer);
 	}
-	setInterval(stopwawtch, 1000);
+	timer = setInterval(stopwawtch, 1000);
+}
+const stopTimer = () => {
+	clearInterval(timer);
+}
+const resetTimer = () => {
+	clearInterval(timer);
+	time.hours = time.minutes = time.seconds = 0;
+	timeDisplay.innerHTML = "00:00:00"
 }
 
-startButton.addEventListener("click", () => {
-	console.log("hit");
-	startTimer();
-})
+startButton.addEventListener("click", () => {startTimer()});
+stopBtn.addEventListener("click", () => {stopTimer()});
+resetBtn.addEventListener("click", () => {resetTimer()});

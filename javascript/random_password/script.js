@@ -3,6 +3,7 @@ const passBtn = document.getElementById("create-pass");
 const copyBtn = document.getElementById("copy")
 const copyTag = document.getElementById("copy-tag");
 const copyDiv = document.getElementById("copied");
+const eyeIcon = document.getElementById("show");
 const len = 15;
 
 const upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -39,7 +40,7 @@ const copyPass = () => {
 	if (passInput.value) {
 		navigator.clipboard.writeText(passInput.value).then(
 			function () {
-				copyBtn.style.display = "none";
+				// copyBtn.style.display = "none";
 				copyTag.innerHTML = "Copied!"
 				copyTag.style.color = "var(--Green)"
 			}
@@ -53,10 +54,22 @@ const copyPass = () => {
 
 passBtn.addEventListener("click", () => {
 	generate();
-	copyBtn.style.display = "block";
+	// copyBtn.style.display = "block";
 	copyTag.innerHTML = "Copy"
 	copyTag.style.color = "var(--OffWhite)"
 })
 copyDiv.addEventListener("click", () => {
 	copyPass();
+})
+eyeIcon.addEventListener("click", () => {
+	if (passInput.value) {
+		if (passInput.type == "password") {
+			eyeIcon.src = "./eye-icons/eye-open.png";
+			passInput.type = "text";
+		}
+		else {
+			eyeIcon.src = "./eye-icons/eye-close.png";
+			passInput.type = "password";
+		}
+	}
 })

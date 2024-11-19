@@ -52,16 +52,22 @@ h1 span {
 	display: flex;
 	align-items: center;
 	cursor: pointer;
-	min-width: 25%;
+	width: 20%;
 	margin: 0 auto;
 }
 
 .copied img {
-	max-width: 15%;
+	width: 30px;
 	height: auto;
 	cursor: pointer;
 	border-radius: 5px;
 	/* transition: all 2s; */
+}
+
+#show {
+	width: 27px;
+	margin-right: 5vh;
+	cursor: pointer;
 }
 
 .copied img:active {
@@ -73,7 +79,8 @@ h1 span {
 	flex: 1;
 	color: var(--OffWhite);
 	font-size: 18px;
-	margin-left: 0.5rem;
+	margin-right: 1vh;
+	margin-left: 1vh;;
 }
 
 input {

@@ -56,7 +56,7 @@ form {
 	flex-basis: 27%;
 }
 .input-wrapper input {
-	flex-basis: 55%;
+	flex-basis: 80%;
 	background: transparent;
 	border: 0;
 	outline: 0;

@@ -4,8 +4,7 @@ const phoneError = document.getElementById("phone-error");
 const messageError = document.getElementById("message-error");
 const submitError = document.getElementById("submit-error");
 
-const nameField = document.getElementById("name");
-nameField.addEventListener("keyup", () => {
+const nameCheck = () => {
 	const name = document.getElementById("name").value;
 	// check to make sure there is name
 	if (name.length === 0) {
@@ -22,10 +21,9 @@ nameField.addEventListener("keyup", () => {
 		nameError.innerHTML = '<i class="fa-solid fa-check"></i>';
 		return true;
 	}
-});
+}
 
-const phoneField = document.getElementById("phone");
-phoneField.addEventListener("keyup", () => {
+const phoneCheck = () => {
 	const phone = document.getElementById("phone").value;
 	if (!phone.match(/^[0-9]{10}$/)) {
 		phoneError.innerHTML = 'Invalid phone'
@@ -38,10 +36,9 @@ phoneField.addEventListener("keyup", () => {
 		phoneError.innerHTML = '<i class="fa-solid fa-check"></i>';
 		return true;
 	}
-});
+}
 
-const emailField = document.getElementById("email");
-emailField.addEventListener("keyup", () => {
+const emailCheck = () => {
 	const email = document.getElementById("email").value;
 	if (email.length === 0) {
 		emailError.innerHTML = "Email required";
@@ -55,10 +52,9 @@ emailField.addEventListener("keyup", () => {
 		emailError.innerHTML = '<i class="fa-solid fa-check"></i>';
 		return true;
 	}
-});
+}
 
-const textField = document.getElementById("message");
-textField.addEventListener("keyup", () => {
+const messageCheck = () => {
 	const text = document.getElementById("message").value;
 	let remaining = 20 - text.length;
 	if (remaining > 0) {
@@ -67,6 +63,37 @@ textField.addEventListener("keyup", () => {
 	}
 	else {
 		messageError.innerHTML = '<i class="fa-solid fa-check"></i>';
+		return true;
+	}
+}
+
+
+const nameField = document.getElementById("name");
+nameField.addEventListener("keyup", () => {
+	nameCheck();
+});
+const phoneField = document.getElementById("phone");
+phoneField.addEventListener("keyup", () => {
+	phoneCheck();
+});
+const emailField = document.getElementById("email");
+emailField.addEventListener("keyup", () => {
+	emailCheck();
+});
+const textField = document.getElementById("message");
+textField.addEventListener("keyup", () => {
+	messageCheck();
+});
+
+const submitField = document.getElementById("submit");
+submitField.addEventListener("click", () => {
+	if (!nameCheck() || !phoneCheck() || !emailCheck() || !messageCheck()) {
+		submitError.style.display = "block";
+		submitError.innerHTML = "Please fix error"
+		return false;
+	}
+	else {
+		submitError.style.display = "none";
 		return true;
 	}
 });

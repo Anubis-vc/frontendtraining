@@ -15,29 +15,34 @@
 
 			<div class="input-wrapper">
 				<label>Full Name</label>
-				<input type="text" placeholder="Enter your name">
-				<span id="name-error">Required field</span>
+				<input type="text" placeholder="Enter your name" id="name">
+				<span id="name-error"></span>
 			</div>
 			<div class="input-wrapper">
 				<label>Phone No.</label>
-				<input type="tel" placeholder="Enter phone">
-				<span id="phone-error">Invalid phone</span>
+				<input type="tel" placeholder="Enter phone" id="phone">
+				<span id="phone-error"></span>
 			</div>
 			<div class="input-wrapper">
 				<label>Email</label>
-				<input type="email" placeholder="Enter email">
-				<span id="email-error">Invalid Email</span>
+				<input type="email" placeholder="Enter email" id="email">
+				<span id="email-error"></span>
 			</div>
 			<div class="input-wrapper">
 				<label>Message</label>
-				<textarea name="message" id="message" rows="5", placeholder="Enter Message"></textarea>
-				<span id="message-error">Message required</span>
+				<textarea name="message" id="message" rows="5", placeholder="Enter Message" id="message"></textarea>
+				<span id="message-error"></span>
 			</div>
 
-			<button>Submit</button>
-			<span id="submit-error">please fix error</span>
+			<div class="submit">
+				<button>Submit</button>
+				<span id="submit-error"></span>
+			</div>
 
 		</form>
 	</div>
+
+	<script src="./script.js"></script>
+
 </body>
 </html>

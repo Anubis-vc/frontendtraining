@@ -47,7 +47,7 @@ form {
 	width: 100%;
 	display: flex;
 	align-items: center;
-	margin: 3vh 0;
+	margin: 3vh 0 2vh;
 	position: relative;
 }
 /* Use flex-basis to allow box to still grow and shrink while setting width */
@@ -56,11 +56,12 @@ form {
 	flex-basis: 27%;
 }
 .input-wrapper input {
-	flex-basis: 65%;
+	flex-basis: 55%;
 	background: transparent;
 	border: 0;
 	outline: 0;
 	padding: 1vh 0.5vh;
+	margin: 0 1vh;
 	color: black;
 	font-size: 16px;
 	border-bottom: 1px solid var(--Grey);
@@ -75,11 +76,27 @@ form {
 	border: 1px solid var(--Grey);
 	margin-left: 1vh;
 }
+.input-wrapper span {
+	position: absolute;
+	bottom: 1vh;
+	right: 0.5vh;
+	font-size: 14px;
+	color:red
+}
+.input-wrapper span i {
+	color: seagreen;
+}
 ::placeholder {
 	font-size: 14px;
 	text-align: center;
 }
 
+.submit {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
 form button {
 	width: 40%;
 	background: black;
@@ -92,4 +109,9 @@ form button {
 	outline: 0;
 	border: 1px solid rgba(255, 255, 255, 0.7);
 	font-size: 16px;
+}
+#submit-error {
+	color: red;
+	text-align: center;
+	font-size: 14px;
 }

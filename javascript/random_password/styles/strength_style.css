@@ -1,0 +1,55 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+	--DarkBlue: #0e223e;
+	--LightGrey: #E6EEEB;
+	--DarkGrey: #727272;
+}
+
+.container {
+	height: 100vh;
+	width: 100%;
+	background: var(--DarkBlue);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+}
+
+input {
+	width: 25%;
+	height: 10%;
+	padding: 0 1%;
+	border: 5px solid var(--DarkGrey);
+	border-radius: 5px;
+	color: black;
+	background: var(--LightGrey);
+	font-size: 18px;
+}
+
+button {
+	font-size: 170%;
+	background: transparent;
+	border-radius: 50%;
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	right: 39%;
+	outline: none;
+	border: 0;
+}
+
+#alert {
+	display: none;
+	position: absolute;
+	bottom: 40.5%;
+	left: 38%;
+	color: white;
+	font-size: 16px;
+}

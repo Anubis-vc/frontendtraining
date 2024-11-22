@@ -44,8 +44,8 @@ body {
 }
 
 #number {
-	font-weight: 500;
-	font-size: 200%;
+	font-weight: 200;
+	font-size: 170%;
 	color: #555;
 }
 
@@ -59,7 +59,7 @@ circle {
 }
 @keyframes anim {
 	100% {
-		stroke-dashoffset: 0;
+		stroke-dashoffset: 154;
 	}
 }
 svg {

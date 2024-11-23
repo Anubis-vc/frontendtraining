@@ -14,6 +14,27 @@
 	flex-direction: column;
 }
 
+.legend {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	justify-content: center;
+	margin-top: 1rem;
+}
+.legend-item {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	margin: 1rem;
+	font-size: 0.9rem;
+	line-height: 1;
+}
+.legend-item .dot {
+	width: 12px;
+	height: 12px;
+	margin: 0;
+}
+
 .dot-container {
 	--dotSize: 12px;
 	width: 80%;

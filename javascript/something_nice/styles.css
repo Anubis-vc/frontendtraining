@@ -14,6 +14,24 @@
 	flex-direction: column;
 }
 
+.top-container {
+	width: 90%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.timers {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.timers .time {
+	margin: 1rem;
+	font-size: 1.25rem;
+	border: 1px solid #555555;
+	padding: 0.8rem;
+}
+
 .legend {
 	display: flex;
 	flex-wrap: wrap;
@@ -33,6 +51,9 @@
 	width: 12px;
 	height: 12px;
 	margin: 0;
+}
+.legend-item .dot.curr {
+	animation: none;
 }
 
 .dot-container {

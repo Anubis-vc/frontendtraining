@@ -1,3 +1,8 @@
+const daysSpan = document.querySelector('h1 span');
+const hrsSpan = document.querySelector('.time.hours span')
+const minSpan = document.querySelector('.time.mins span');
+const secSpan = document.querySelector('.time.seconds span');
+
 const june1 = new Date('2024-06-01T00:00:00');
 const jan1 = new Date('2024-01-01T00:00:00');
 const april12 = new Date('2024-04-12T00:00:00');
@@ -13,11 +18,22 @@ const xmasDotNm = Math.floor((xmas - jan1) / (1000 * 60 * 60 * 24));
 const dec30DotNum = Math.floor((dec30 - jan1) / (1000 * 60 * 60 * 24));
 const currDotNum = Math.floor((currentDate - jan1) / (1000 * 60 * 60 * 24));
 
-const diffRemaining = dec30 - currentDate;
-const daysRemaining = Math.floor(diffRemaining / (1000 * 60 * 60 * 24));
-const hoursRemaining = Math.floor(diffRemaining / (1000 * 60 * 60));
-const minsRemaining = Math.floor(diffRemaining / (1000 * 60));
+function updateTimes() {
+	const now = new Date();
+	const end = new Date('2024-12-30T09:15:00');
+	const diffRemaining = end - now;
+	const daysRemaining = Math.floor(diffRemaining / (1000 * 60 * 60 * 24));
+	const hoursRemaining = Math.floor(diffRemaining / (1000 * 60 * 60));
+	const minsRemaining = Math.floor(diffRemaining / (1000 * 60));
+	const secondsRemaining = Math.floor(diffRemaining / (1000));
 
+	daysSpan.innerHTML = daysRemaining;
+	hrsSpan.innerHTML = hoursRemaining;
+	minSpan.innerHTML = minsRemaining;
+	secSpan.innerHTML = secondsRemaining;
+}
+updateTimes();
+setInterval(updateTimes, 1000);
 // function getDotSize(totalDots) {
 // 	if (totalDots <= 100) {
 // 		return 14;
@@ -56,7 +72,6 @@ function findDotColor(currDot) {
 		return 'complete';
 	}
 }
-console.log(ap12DotNum)
 
 function addDays(date, days) {
 	const newDate = new Date(date);

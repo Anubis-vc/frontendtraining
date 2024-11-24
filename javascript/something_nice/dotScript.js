@@ -192,7 +192,8 @@ function setupResizeObserver() {
 	const resizeObserver = new ResizeObserver(entries => {
 		for (let entry of entries) {
 			if (entry.target === container) {
-				createDots(366);
+				// come back and fix this for different numbers of dots
+				createDots(376);
 			}
 		}
 	});
@@ -203,4 +204,7 @@ function setupResizeObserver() {
 setupResizeObserver();
 updateTimes();
 setInterval(updateTimes, 1000);
-createDots(366);
+
+const endDate = new Date('2025-01-10T00:00:00');
+totalDays = Math.floor((endDate - jan1) / (1000 * 60 * 60 * 24));
+createDots(totalDays);

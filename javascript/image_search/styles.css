@@ -33,6 +33,8 @@ form input {
 	color: white;
 	padding: 0 1rem;
 	font-size: 1.05rem;
+	border: 0;
+	outline: 0;
 }
 form button {
 	background: #ff3929;
@@ -60,4 +62,18 @@ form button {
 	outline: 0;
 	display: none;
 	cursor: pointer;
+}
+
+#results {
+	width: 80%;
+	margin: 6rem auto 3rem;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 2rem;
+}
+#results img {
+	width: 100%;
+	height: 14rem;
+	object-fit: cover;
+	border-radius: 5px;
 }

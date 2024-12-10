@@ -1,6 +1,8 @@
 const container = document.getElementById('dotContainer');
 const tooltip = document.getElementById('tooltip');
 const root = document.querySelector(':root');
+const progressBar = document.querySelector('.progress-bar');
+const progressText = document.querySelector('.progress-text');
 
 const daysSpan = document.querySelector('h1 span');
 const hrsSpan = document.querySelector('.time.hours span')
@@ -21,6 +23,37 @@ const june1DotNum = Math.floor((june1 - jan1) / (1000 * 60 * 60 * 24));
 const xmasDotNm = Math.floor((xmas - jan1) / (1000 * 60 * 60 * 24));
 const dec30DotNum = Math.floor((dec30 - jan1) / (1000 * 60 * 60 * 24));
 const currDotNum = Math.floor((currentDate - jan1) / (1000 * 60 * 60 * 24));
+
+function updateProgress() {
+	const now = new Date();
+	const start = june1;
+	const end = new Date('2024-12-30T09:15:00');
+	const total = end - start;
+	const current = now - start;
+	const progress = Math.min(100, Math.max(0, (current / total) * 100));
+
+	let startProgress = parseFloat(progressBar.style.width) || 0;
+    const duration = 2000;
+    const startTime = performance.now();
+
+    function animate(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress_fraction = Math.min(elapsed / duration, 1);
+        
+        // Calculate current progress using easeOutQuad easing
+        const currentProgress = startProgress + (progress - startProgress) * (1 - Math.pow(1 - progress_fraction, 2));
+        
+        // Update both the bar and text
+        progressBar.style.width = `${currentProgress}%`;
+        progressText.textContent = `${Math.round(currentProgress)}%`;
+
+        if (progress_fraction < 1) {
+            requestAnimationFrame(animate);
+        }
+    }
+
+    requestAnimationFrame(animate);
+}
 
 function updateTimes() {
 	const now = new Date();
@@ -152,12 +185,6 @@ function setupDotListeners(dot, index) {
 function createDots(totalDots) {
     const dotSize = calculateDotSize();
 	const gapSize = calculateGapSize(dotSize);
-
-	// added to help dots mantain color on resize
-	// const existingDots = Array.from(container.children).map(dot => {
-    //     const classes = Array.from(dot.classList);
-    //     return classes.find(cls => cls !== 'dot'); // Store the color class
-    // });
     
     container.innerHTML = '';
 
@@ -203,7 +230,11 @@ function setupResizeObserver() {
 
 setupResizeObserver();
 updateTimes();
-setInterval(updateTimes, 1000);
+updateProgress();
+setInterval(() => {
+	updateTimes();
+	updateProgress();
+}, 1000);
 
 const endDate = new Date('2025-01-10T00:00:00');
 totalDays = Math.floor((endDate - jan1) / (1000 * 60 * 60 * 24));

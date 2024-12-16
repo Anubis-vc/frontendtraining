@@ -1,0 +1,178 @@
+fieldset,
+.fields,
+.experience,
+.general,
+.buttons {
+  display: flex;
+}
+
+fieldset,
+.fields,
+.experience,
+.general {
+  flex-direction: column;
+}
+
+fieldset {
+  padding: 3px 5px 0;
+  margin-bottom: 5px;
+  border: 0;
+}
+
+fieldset:last-of-type {
+  margin-bottom: 0;
+}
+
+legend,
+button {
+  text-transform: capitalize;
+}
+
+legend {
+  width: 100%;
+  font-family: 'Charter', 'Times New Roman', Times, serif;
+  font-weight: 300;
+  font-size: 1rem;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  border-bottom: 2px solid #828282;
+  padding-bottom: 5px;
+  padding-left: 0;
+  text-align: left;
+  transform: scale(1.005, 0.8);
+}
+
+.general .data-field {
+  padding: 0;
+}
+
+.general > .data-field {
+  margin: 0 auto;
+}
+
+.data-field .name {
+  font-size: 2.5rem;
+}
+
+.data-field .phone {
+  font-style: normal;
+  font-size: 1rem;
+}
+
+.contact-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.first-letter {
+  font-size: 1.4rem;
+}
+
+.fields {
+  align-items: flex-start;
+}
+
+.experience,
+.general {
+  width: 100%;
+}
+
+.experience-editing {
+  border-bottom: 1px solid #828282;
+  padding-top: 10px;
+}
+
+.experience-editing:last-of-type {
+  border-bottom: none;
+}
+
+.experience-editing:first-of-type {
+  padding-top: 0;
+}
+
+.experience-submitted:first-of-type {
+  margin-top: 3px;
+}
+
+.experience-submitted:last-of-type {
+  margin-bottom: -10px;
+}
+
+.from-to {
+  margin: 0 10px 0 auto;
+}
+
+.add {
+  margin-bottom: 10px;
+}
+
+.add,
+.remove {
+  cursor: pointer;
+  align-self: flex-end;
+  transition: transform 400ms ease-out;
+  will-change: transform;
+}
+
+.add:hover,
+.remove:hover {
+  transform: scale(1.1);
+}
+
+.buttons {
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+button {
+  border-color: #213547;
+  padding: 5px 15px;
+  transition: background-color 200ms, color 200ms, border-color 200ms;
+  font-weight: 500;
+}
+
+button:enabled:hover {
+  background: #000;
+  color: #fff;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+input, textarea {
+  min-width: 200px;
+}
+
+@media (min-width: 460px) {
+  .buttons {
+    padding-right: 20px;
+  }
+}
+
+@media (min-width: 600px) {
+  .buttons {
+    padding-right: 30px;
+  }
+}
+
+@media (min-width: 700px) {
+  input, textarea {
+    min-width: 300px;
+  }
+}
+
+@media (min-width: 900px) {
+  .buttons {
+    padding-right: 50px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .buttons {
+    padding-right: 70px;
+  }
+}

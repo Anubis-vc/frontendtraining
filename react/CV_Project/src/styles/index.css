@@ -1,0 +1,24 @@
+:root {
+  line-height: 1.4;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button {
+  border-radius: 5px;
+  border: 1px solid;
+  font-size: 1em;
+  font-family: inherit;
+  background-color: #f9f9f9;
+  cursor: pointer;
+}

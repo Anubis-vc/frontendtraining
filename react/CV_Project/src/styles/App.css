@@ -1,0 +1,53 @@
+@font-face {
+  font-family: 'Charter';
+  src: url('../assets/fonts/charter_regular.woff2');
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  padding-bottom: 0;
+  text-align: center;
+  font-family: 'Cormorant Garamond', 'Times New Roman', Times, serif;
+}
+
+.generate-cv {
+  margin: 10px auto 0;
+  padding: 10px 15px;
+}
+
+footer {
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+  border-top: 1px solid #ccc;
+  margin-top: 10px;
+}
+
+footer p {
+  margin: 5px 0;
+}
+
+footer a {
+  color: #0073e6;
+  text-decoration: underline;
+}
+
+footer a:hover {
+  color: #646cff;
+}
+
+@media (max-width: 768px) {
+  footer {
+    padding: 15px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  footer {
+    font-size: 10px;
+  }
+}

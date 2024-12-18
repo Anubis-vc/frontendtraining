@@ -1,3 +1,5 @@
+import '../styles/DataField.css'
+
 /*
 	Render label properly
 	Shows list if there is multiple and just the label if only one piece of data
@@ -8,7 +10,7 @@
 export default function DataField( {label, data} ) {
 	let phrase, list;
 	if (label.split(' ')[1] === 'responsibilities') {
-		phrase = data.split('n');
+		phrase = data.split('\n');
 		list = (
 			<ul>
 				{phrase.map(x => <li key={x}>{x}</li>)}

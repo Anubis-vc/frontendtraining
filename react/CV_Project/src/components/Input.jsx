@@ -1,3 +1,5 @@
+import '../styles/Input.css'
+
 /*
 	Render labeled input in container
 
@@ -16,6 +18,8 @@ export default function Input({
 	, data
 }) {
 	const name = label.split(' ')[0];
+	console.log(name);
+	console.log(label);
 	const id = crypto.randomUUID();
 
 	return (

@@ -1,9 +1,10 @@
 import { useState } from 'react';
-import Fieldset from './Fieldset';
+import Fieldset from './Fieldset.jsx';
+import Education from './Education.jsx'
 
 export default function Form({
 	isEditingEducation
-	, setisEditingEducation
+	, setIsEditingEducation
 }) {
 	const [educationalExp, setEducationalExp] = useState([
 		{
@@ -17,6 +18,7 @@ export default function Form({
 	const handleExpChange = (e, index, expType, setExpType, remove=false) => {
 		if (remove) {
 			setExpType(expType.toSpliced(index, 1));
+			return;
 		}
 
 		const key = e.target.name;
@@ -34,11 +36,11 @@ export default function Form({
 
 	return (
 		<form>
-			<FieldSet
+			<Fieldset
 				legend="education"
 				filled={educationalExpFilled}
 				isEditing={isEditingEducation}
-				setEditing={setisEditingEducation}
+				setEditing={setIsEditingEducation}
 				addEducation={exp => setEducationalExp([...educationalExp, exp])}
 			>
 				{educationalExp.map((exp, i) => {
@@ -58,9 +60,9 @@ export default function Form({
 							}
 							education={exp}
 						/>
-					)
+					);
 				})}
-			</FieldSet>
+			</Fieldset>
 		</form>
-	)
+	);
 }

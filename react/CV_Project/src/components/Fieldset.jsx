@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import Icon from '@mdi/react';
 import { mdiPlusBox } from '@mdi/js';
 import Button from './Button';
-// import '../styles/Fieldset.css';
+import '../styles/Fieldset.css';
 
 /*
 	Render fieldset
@@ -30,12 +30,7 @@ export default function Fieldset({
 	useEffect(() => {
 		if (isEditing) {
 			setEditBtnDisabled(true);
-			if (filled) {
-				setSubmitBtnDisabled(false);
-			}
-			else {
-				setSubmitBtnDisabled(true);
-			}
+			setSubmitBtnDisabled(!filled);
 		}
 		else {
 			setEditBtnDisabled(false);
@@ -48,7 +43,7 @@ export default function Fieldset({
 		let editBtn;
 	
 		if (legend === 'education') {
-			editBtn = document.querySelector('[experience="education"]');
+			editBtn = document.querySelector('[data-exp="education"]');
 
 			addEducation({
 				school: ''
@@ -58,7 +53,7 @@ export default function Fieldset({
 			});
 		}
 		else {
-			editBtn = document.querySelector('[experience="experience"]');
+			editBtn = document.querySelector('[data-exp="experience"]');
 
 			addPractical({
 				company: ''
@@ -66,7 +61,7 @@ export default function Fieldset({
 				, responsibilities: ''
 				, from: ''
 				, to: ''
-			})
+			});
 		}
 		editBtn?.click();
 	};
@@ -75,17 +70,18 @@ export default function Fieldset({
 	const displayAddButton = () => {
 		if (legend === 'education' || legend === 'experience') {
 			const title = legend === 'education' ? 'Add education' : 'Add position';
-		}
 
-		return (
-			<Icon
-				onClick={addMoreExperience}
-				className="add no-print"
-				title={title}
-				path={mdiPlusBox}
-				size={1}
-			/>
-		);
+			return (
+				<Icon
+					onClick={addMoreExperience}
+					className="add no-print"
+					title={title}
+					path={mdiPlusBox}
+					size={1}
+				/>
+			);
+		}
+		return null;
 	}
 
 	return (
@@ -102,14 +98,14 @@ export default function Fieldset({
 				<Button
 					text="edit"
 					experience={legend.split(' ')[0]}
-					isDisabled={editBtnDisabled}
+					btnDisabled={editBtnDisabled}
 					allComplete={filled}
 					isEditing={isEditing}
 					setEdit={setEditing}
 				/>
 				<Button
 					text="submit"
-					isDisabled={submitBtnDisabled}
+					btnDisabled={submitBtnDisabled}
 					allComplete={filled}
 					isEditing={isEditing}
 					setEdit={setEditing}

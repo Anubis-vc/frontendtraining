@@ -4,7 +4,7 @@
  {string} text = text within button
  {string} experience
  {boolean} isdisabled
- {boolean} allComplete = checks if all related text fields are filled
+ {boolean} filled = checks if all related text fields are filled
  {function(boolean)} setEdit = Function that changes teh state of the related fieldset
 	so user can go back to editing. 
 */
@@ -13,13 +13,13 @@ export default function Button({
 	text
 	, experience
 	, btnDisabled
-	, allComplete
+	, filled
 	, setEdit
 }) {
 	const handleButtonClick = e => {
 		e.preventDefault();
 
-		if (text === 'submit' && allComplete) {
+		if (text === 'submit' && filled) {
 			setEdit(false);
 		}
 		else {

@@ -4,16 +4,17 @@ import Form from './components/Form';
 
 function App() {
   const [cvReady, setCvReady] = useState(false);
+  const [isEditingContact, setIsEditingContact] = useState(true);
   const [isEditingEducation, setIsEditingEducation] = useState(true);
 
   useEffect(() => {
-    if (!isEditingEducation) {
+    if (!isEditingEducation && !isEditingContact) {
       setCvReady(true);
     }
     else {
       setCvReady(false);
     }
-  }, [setCvReady, isEditingEducation]);
+  }, [setCvReady, isEditingContact, isEditingEducation]);
 
   const handlePrinting = () => {
     const noPrint = document.querySelectorAll('.no-print');
@@ -36,7 +37,9 @@ function App() {
   return (
     <>
       <Form
+        isEditingContact={isEditingContact}
         isEditingEducation={isEditingEducation}
+        setIsEditingContact={bool => setIsEditingContact(bool)}
         setisEditingEducation={bool => setIsEditingEducation(bool)}
       />
       <button

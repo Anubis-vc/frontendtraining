@@ -11,6 +11,7 @@ function App() {
   const [imgClicks, setImgClicks] = useState(new Set());
   const [isGameOn, setIsGameOn] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [gameMessage, setGameMessage] = useState("");
 
   useEffect(() => {
     if (isGameOn) {
@@ -45,25 +46,29 @@ function App() {
         setBestScore={setBestScore}
         setImgClicks={setImgClicks}
         setIsGameOn={setIsGameOn}
+        setGameMessage={setGameMessage}
       />
     );
 
   return (
-    <div id="container">
-      <div className="score-container">
-        <h1>Score: {score}</h1>
-        <h3>Best Score: {bestScore}</h3>
+    <div className="big-container">
+      <div className="container">
+        <div className="score-container">
+          <h1>Score: {score}</h1>
+          <h3>Best Score: {bestScore}</h3>
+        </div>
+        {!isGameOn ? 
+          <button 
+            onClick={() => setIsGameOn(!isGameOn)}>
+              This game fetches 12 posters from the <br/>
+              American Film Institute's top 100 movies of all time.<br/><br/>
+              Choose each poster only once to win.<br/><br/>
+              Click to play.
+          </button>: 
+          null}
+        {isLoading ? <LoadingSkeleton /> : <div className="card-container">{cardDisplay}</div>}
       </div>
-      {!isGameOn ? 
-        <button 
-          onClick={() => setIsGameOn(!isGameOn)}>
-            This game fetches 12 posters from the <br/>
-            American Film Institute's top 100 movies of all time.<br/><br/>
-            Click each poster only once to win.<br/><br/>
-            Click to turn game on.
-        </button>: 
-        null}
-      {isLoading ? <LoadingSkeleton /> : <div className="card-container">{cardDisplay}</div>}
+      <div className={`game-message ${gameMessage ? 'visible' : ''}`}>{gameMessage}</div>
     </div>
   );
 }

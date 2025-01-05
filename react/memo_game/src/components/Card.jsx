@@ -9,6 +9,7 @@ export default function Card ({
 	, setBestScore
 	, setImgClicks
 	, setIsGameOn
+	, setGameMessage
 }) {
 
 	const shuffleArray = arr => {
@@ -23,21 +24,35 @@ export default function Card ({
 	}
 
 	const resetGame = tempScore => {
-		setBestScore(Math.max(bestScore, tempScore));
-		setScore(0);
-		setImgClicks(new Set());
-		setIsGameOn(false);
+		const container = document.querySelector('.container');
+		const messageBox = document.querySelector('.game-message');
+
+		container.classList.add('fade-out');
+		messageBox.classList.remove('visible');
+
+		setTimeout(() => {
+			setBestScore(Math.max(bestScore, tempScore));
+			setScore(0);
+			setImgClicks(new Set());
+			setIsGameOn(false);
+
+			setTimeout(() => {
+				container.classList.remove('fade-out');
+			}, 50);
+
+			setGameMessage('');
+		}, 4000)
 	}
 
 	const handleImgClick = e => {
 		const id = e.target.id;
 
 		if (imgClicks.has(id)) {
-			alert(`Clicked the same poster twice, game over.\nScore: ${score}`);
+			setGameMessage(`Clicked the same poster twice, game over. Final Score: ${score}`);
 			resetGame(score);
 		}
 		else if (score + 1 === 12){ // make sure this is changed if number of posters changes
-			alert(`You win, successfully clicked all posters`);
+			setGameMessage(`You win! Successfully clicked all posters`);
 			resetGame(score + 1);
 		}
 		else {

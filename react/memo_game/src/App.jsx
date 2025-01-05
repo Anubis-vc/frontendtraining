@@ -51,7 +51,7 @@ function App() {
     );
 
   return (
-    <div className="big-container">
+    <>
       <div className="container">
         <div className="score-container">
           <h1>Score: {score}</h1>
@@ -69,7 +69,7 @@ function App() {
         {isLoading ? <LoadingSkeleton /> : <div className="card-container">{cardDisplay}</div>}
       </div>
       <div className={`game-message ${gameMessage ? 'visible' : ''}`}>{gameMessage}</div>
-    </div>
+    </>
   );
 }
 

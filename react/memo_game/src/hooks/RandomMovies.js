@@ -1,4 +1,5 @@
-const movies = [["Citizen Kane", "1941"],
+const movies = [
+	["Citizen Kane", "1941"],
 	["Casablanca", "1942"],
 	["The Godfather", "1972"],
 	["Gone with the Wind", "1939"],
@@ -97,7 +98,8 @@ const movies = [["Citizen Kane", "1941"],
 	["Bringing Up Baby", "1938"],
 	["Unforgiven", "1992"],
 	["Guess Who's Coming to Dinner", "1967"],
-	["Yankee Doodle Dandy", "1942"]]
+	["Yankee Doodle Dandy", "1942"]
+];
 
 const getOneMovie = async (movieData) => {
 	const [title, year] = movieData;
@@ -114,7 +116,7 @@ const getOneMovie = async (movieData) => {
 
 const fetchMovies = async () => {
 	let arr = [];
-	while (arr.length < 10) {
+	while (arr.length < 12) { // change this number to change number of movies
 		const num = Math.floor(Math.random() * 100);
 		if (arr.indexOf(num) === -1) arr.push(num);
 	}

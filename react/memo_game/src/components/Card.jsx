@@ -2,9 +2,11 @@ export default function Card ({
 	allData
 	, data
 	, score
+	, bestScore
 	, imgClicks
 	, setData
 	, setScore
+	, setBestScore
 	, setImgClicks
 	, setIsGameOn
 }) {
@@ -20,7 +22,8 @@ export default function Card ({
 		return arr;
 	}
 
-	const resetGame = () => {
+	const resetGame = tempScore => {
+		setBestScore(Math.max(bestScore, tempScore));
 		setScore(0);
 		setImgClicks(new Set());
 		setIsGameOn(false);
@@ -28,15 +31,14 @@ export default function Card ({
 
 	const handleImgClick = e => {
 		const id = e.target.id;
-		setIsGameOn(true);
 
 		if (imgClicks.has(id)) {
-			alert(`Clicked the same poster twice. Score: ${score}`);
-			resetGame();
+			alert(`Clicked the same poster twice, game over.\nScore: ${score}`);
+			resetGame(score);
 		}
-		else if (score + 1 === 10){
+		else if (score + 1 === 12){ // make sure this is changed if number of posters changes
 			alert(`You win, successfully clicked all posters`);
-			resetGame();
+			resetGame(score + 1);
 		}
 		else {
 			setImgClicks(imgClicks.add(id));
@@ -52,9 +54,7 @@ export default function Card ({
 				className="poster"
 				src={data.Poster}
 				alt={data.Title}
-				style={{ width: '10rem', height: '10rem' }}
 			/>
-			<figcaption className="movie-title">{data.Title}</figcaption>
 		</div>
 	);
 }

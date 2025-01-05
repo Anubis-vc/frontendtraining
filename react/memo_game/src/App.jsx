@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react'
 import './App.css'
-// import Card from './components/Card'
+import Card from './components/Card'
 import fetchMovies from './hooks/RandomMovies';
+import LoadingSkeleton from './components/LoadingSkeleton';
 
 function App() {
   const [data, setData] = useState([]);
   const [score, setScore] = useState(0);
-  // const [imgClicks, setImgClicks] = useState(new Set());
+  const [bestScore, setBestScore] = useState(0);
+  const [imgClicks, setImgClicks] = useState(new Set());
   const [isGameOn, setIsGameOn] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -26,28 +28,44 @@ function App() {
     return () => {
       setData([]);
       setScore(0);
-      // setImgClicks(new Set());
+      setImgClicks(new Set());
     }
   }, [isGameOn]);
 
-  const listItems = data.map(d => 
-    <li key={d.imdbID}>
-      <img src={d.Poster} alt={d.Title} />
-    </li>
-  );
+  const cardDisplay = data.map(d => 
+      <Card
+        key={d.imdbID}
+        data={d}
+        allData={data}
+        score={score}
+        bestScore={bestScore}
+        imgClicks={imgClicks}
+        setData={setData}
+        setScore={setScore}
+        setBestScore={setBestScore}
+        setImgClicks={setImgClicks}
+        setIsGameOn={setIsGameOn}
+      />
+    );
 
   return (
     <div id="container">
-      <h1>Score: {score}</h1>
-      <button onClick={() => setScore(score + 1)}>Score increase</button>
-      <button onClick={() => setIsGameOn(!isGameOn)}>{`Game is ${isGameOn ? 'On' : 'Off'}`}</button>
-      <div className="card-containter">
-        {isLoading ? 
-          (<div className="loading">Loading movies...</div>) 
-          : (<ul>{listItems}</ul>)}
+      <div className="score-container">
+        <h1>Score: {score}</h1>
+        <h3>Best Score: {bestScore}</h3>
       </div>
+      {!isGameOn ? 
+        <button 
+          onClick={() => setIsGameOn(!isGameOn)}>
+            This game fetches 12 posters from the <br/>
+            American Film Institute's top 100 movies of all time.<br/><br/>
+            Click each poster only once to win.<br/><br/>
+            Click to turn game on.
+        </button>: 
+        null}
+      {isLoading ? <LoadingSkeleton /> : <div className="card-container">{cardDisplay}</div>}
     </div>
   );
 }
 
-export default App
+export default App;

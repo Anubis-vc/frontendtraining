@@ -48,7 +48,7 @@ export default function Card ({
 		const id = e.target.id;
 
 		if (imgClicks.has(id)) {
-			setGameMessage(`Clicked the same poster twice, game over. Final Score: ${score}`);
+			setGameMessage(`Clicked the same poster twice, game over. \n\nFinal Score: ${score}`);
 			resetGame(score);
 		}
 		else if (score + 1 === 12){ // make sure this is changed if number of posters changes

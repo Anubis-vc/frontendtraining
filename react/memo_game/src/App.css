@@ -45,7 +45,6 @@ h3 {
 }
 
 .card {
-  background-color: rgb(25, 27, 46);
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -97,20 +96,23 @@ h3 {
 }
 
 .game-message {
+  white-space: pre-line;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: rgba(25, 27, 46, 0.95);
-  background-color: white;
-  padding: 2rem;
-  border-radius: 10px;
+  color: white;
+  background-color: #1a1a1a;;
+  padding: 0.6em 1.2em;
+  border: 1px solid white;
+  border-radius: 8px;
   text-align: center;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease-in-out;
   z-index: 10;
   visibility: hidden;
+  font-family: inherit;
 }
 .game-message.visible {
   opacity: 1;

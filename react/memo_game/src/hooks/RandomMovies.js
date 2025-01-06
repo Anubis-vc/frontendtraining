@@ -105,7 +105,7 @@ const getOneMovie = async (movieData) => {
 	const [title, year] = movieData;
 	const KEY = import.meta.env.VITE_OMDB_API_KEY;
 	const response = await fetch(
-		`http://www.omdbapi.com/?t=${title}&y=${year}&apikey=${KEY}`
+		`https://www.omdbapi.com/?t=${title}&y=${year}&apikey=${KEY}`
 	);
 
 	if (!response.ok) {

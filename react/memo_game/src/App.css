@@ -36,8 +36,8 @@ h3 {
 
 .card-container {
   display: grid;
-  grid-template-columns: repeat(6, 1fr); /* Exactly 4 columns */
-  grid-template-rows: repeat(2, 1fr);    /* Exactly 3 rows */
+  grid-template-columns: repeat(6, 1fr); /* Exactly 6 columns */
+  grid-template-rows: repeat(2, 1fr);    /* Exactly 2 rows */
   gap: 2rem;
   width: 100%;
   padding: 1rem;
@@ -68,8 +68,8 @@ h3 {
 
 .skeleton-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   gap: 2rem;
   width: 100%;
   padding: 1rem;
@@ -80,6 +80,7 @@ h3 {
   border-radius: 5px;
   aspect-ratio: 2/3;
   overflow: hidden;
+  width: 100%;
 }
 
 .skeleton-content {

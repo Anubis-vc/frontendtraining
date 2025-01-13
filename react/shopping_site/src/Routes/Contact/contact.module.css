@@ -1,0 +1,140 @@
+.contactMain {
+	width: 50%;
+	padding: 2rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 2rem;
+}
+
+.contactMain h1 {
+	font-size: 2.8rem;
+	padding-bottom: 1rem;
+	margin-bottom: 1rem;
+	color: var(--teal);
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+	font-family: "Lora", serif;
+	text-align: center;
+	border-bottom: 4px solid var(--green);
+}
+
+.form {
+	width: 100%;
+	max-width: 800px;
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+}
+
+.label {
+	font-size: 1.4rem;
+	color: var(--grey);
+	font-family: "Poppins", sans-serif;
+}
+
+.input,
+.textarea {
+	width: 100%;
+	padding: 0.5rem 0.75rem;
+	font-size: 1.2rem;
+	font-family: "Poppins", sans-serif;
+	border: 1px solid var(--grey);
+	border-radius: 0.4rem;
+	background-color: var(--beige);
+	color: var(--grey);
+}
+
+.input:focus,
+.textarea:focus {
+	outline: none;
+	border-color: var(--teal);
+	box-shadow: 0 0 5px var(--teal);
+}
+
+.textarea {
+	height: 120px;
+	resize: none;
+}
+
+.button {
+	padding: 0.8rem 1.2rem;
+	font-size: 1.4rem;
+	font-family: "Poppins", sans-serif;
+	color: #fff;
+	background-color: var(--teal);
+	border: none;
+	border-radius: 0.4rem;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+
+.button:hover {
+	background-color: var(--clay);
+}
+
+.contactContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 2rem;
+	width: 100%;
+	/* max-width: 800px; */
+}
+
+.contactInfo {
+	width: 100%;
+	max-width: 350px;
+	font-family: "Poppins", sans-serif;
+	color: var(--grey);
+}
+
+.contactInfo h2 {
+	font-size: 2rem;
+	margin-bottom: 2rem;
+	color: var(--teal);
+	padding-bottom: 2rem;
+	border-bottom: 4px solid var(--green);
+	text-align: center;
+}
+
+.contactInfo p {
+	font-size: 1.25rem;
+	margin: 0.5rem 0;
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}
+
+.contactInfo a {
+	color: var(--teal);
+	text-decoration: none;
+	transition: color 0.3s;
+}
+
+.contactInfo a:hover {
+	color: var(--clay);
+}
+
+.contactInfo img {
+	width: 1.6rem;
+}
+
+.error {
+	border-color: #ff4444 !important;
+	background-color: #fff8f8;
+}
+
+.errorText {
+	color: #ff4444;
+	font-size: 0.875rem;
+	margin-top: -1rem;
+}
+
+.button:disabled {
+	background-color: #cccccc;
+	cursor: not-allowed;
+}
+
+.button:disabled:hover {
+	background-color: #cccccc;
+}

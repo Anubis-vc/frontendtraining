@@ -22,6 +22,7 @@
 }
 
 .landing-content p {
+	text-wrap: balance;
 	text-align: center;
 	font-size: 2rem;
 	margin-bottom: 2rem;

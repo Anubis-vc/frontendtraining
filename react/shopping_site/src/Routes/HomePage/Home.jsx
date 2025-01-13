@@ -11,21 +11,25 @@ import jewlery from "../../assets/jewlery.jpg";
 function Home () {
 	const categories = [
 		{
+			id: 1,
 			name: "Electronics",
 			image: speakers,
 			link: "/store",
 		},
 		{
+			id: 2,
 			name: "Jewlery",
 			image: jewlery,
 			link: "/store",
 		},
 		{
+			id: 3,
 			name: "Men's Clothing",
 			image: mens,
 			link: "/store",
 		},
 		{
+			id: 4,
 			name: "Women's Clothing",
 			image: womens,
 			link: "/store",
@@ -52,6 +56,20 @@ function Home () {
 							About
 						</button>
 					</Link>
+				</div>
+			</section>
+
+			<section className={styles.categories}>
+				<h2>Shop by Category</h2>
+				<div className={styles['category-grid']}>
+					{categories.map(x => (
+						<Category
+							key={x.id}
+							name={x.name}
+							image={x.image}
+							link={x.link}
+						/>
+					))}
 				</div>
 			</section>
 		</div>

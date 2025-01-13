@@ -1,11 +1,11 @@
 import { NavLink } from "react-router-dom";
+import logo from "../assets/logo.png";
 
 const Navbar = () => {
 	return (
 		<nav>
-			<NavLink className="logo" to="/">
-				Come back with logo
-				{/* <img src="" alt="" /> */}
+			<NavLink className="logo-link" to="/">
+				<img id="logo" src={logo} alt="VC logo" />
 			</NavLink>
 			<ul>
 				<li>

@@ -1,12 +1,5 @@
-/* .hero {
-	display: flex;
-	align-items: center;
-	padding: 2rem;
-	background-color: var(--beige);
-} */
-
 .landing-content {
-	max-width: 100%;
+	max-width: 90%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -16,20 +9,20 @@
 
 .landing-img {
 	width: 100%;
-	max-width: 500px;
+	max-width: 550px;
 	border-radius: 4px;
 	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .landing-content h1 {
-	font-size: 4.8rem;
-	margin-bottom: 1rem;
+	font-size: 3.75rem;
 	color: var(--grey);
 	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 	font-family: "Lora", serif;
 }
 
 .landing-content p {
+	text-align: center;
 	font-size: 2rem;
 	margin-bottom: 2rem;
 	color: var(--grey);
@@ -47,7 +40,7 @@
 
 .landing-buttons .btn {
 	padding: 1rem 2rem;
-	font-size: 1.8rem;
+	font-size: 1.5rem;
 	border: none;
 	border-radius: 5px;
 	cursor: pointer;
@@ -78,8 +71,7 @@
 	background-color: var(--beige);
 }
 
-.categories h2,
-.testimonials h2 {
+.categories h2 {
 	text-align: center;
 	font-size: 3.6rem;
 	color: var(--grey);

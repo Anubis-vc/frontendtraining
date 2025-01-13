@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
 import styles from "./home.module.css";
+import Category from "../../Components/Category";
+
+import landing from "../../assets/landing.jpg";
 import speakers from "../../assets/speakers.jpg";
 import mens from "../../assets/mens.jpg";
 import womens from "../../assets/womens.jpg";
 import jewlery from "../../assets/jewlery.jpg";
-import Category from "../../Components/Category";
 
 function Home () {
 	const categories = [
@@ -32,21 +34,21 @@ function Home () {
 
 	return (
 		<div className="main-container">
-			<section className="landing-content">
-				<img className="landing-img" src={speakers} alt="landing page image" />
-				<h1>Welcome to VC Quarter</h1>
+			<section className={styles["landing-content"]}>
+				<img className={styles["landing-img"]} src={landing} alt="landing page image" />
+				<h1>Welcome to VC Pennies</h1>
 				<p>
 					Discover a new age department store on the cutting edge of 
-					fashion and electronics.
+					fashion and electronics to fit any budget.
 				</p>
-				<div className="landing-buttons">
+				<div className={styles["landing-buttons"]}>
 					<Link to="store">
-						<button>
-							Shop Now
+						<button className={`${styles["btn"]} ${styles["btn-primary"]}`}>
+							Shop
 						</button>
 					</Link>
 					<Link to="about">
-						<button>
+						<button className={`${styles["btn"]} ${styles["btn-secondary"]}`}>
 							About
 						</button>
 					</Link>

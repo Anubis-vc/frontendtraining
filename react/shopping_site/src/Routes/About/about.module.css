@@ -1,0 +1,186 @@
+.about-main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 75%;
+}
+
+.aboutSection:first-of-type {
+	border-top: none;
+}
+
+.aboutSection {
+	border-top: 4px solid var(--green);
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+	max-width: 90%;
+}
+
+.aboutImage {
+	width: 100%;
+	max-width: 500px;
+	border-radius: 4px;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.mainTitle {
+	text-align: center;
+	font-size: 3rem;
+	color: var(--grey);
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+	font-family: "Lora", serif;
+	margin-bottom: 1rem;
+}
+
+.title {
+	font-size: 2.5rem;
+	color: var(--grey);
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+	font-family: "Lora", serif;
+	margin-bottom: 1rem;
+}
+
+.mainSubtitle {
+	font-size: 2rem;
+	color: var(--grey);
+	font-family: "Lora", serif;
+}
+
+.subtitle {
+	font-size: 1.6rem;
+	color: var(--grey);
+	font-family: "Lora", serif;
+}
+
+.missionContainer {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.missionContainer p {
+	font-size: 1.7rem;
+	color: var(--grey);
+	font-family: "Lora", serif;
+	text-align: center;
+	width: 50%;
+}
+
+.missionImage {
+	width: 50%;
+	border-radius: 50%;
+	max-width: 300px;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.innerSection {
+	display: flex;
+	gap: 20px;
+}
+
+.innerCard {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+	background-color: var(--green);
+	font-family: "Lora", serif;
+	border-radius: 20px;
+	text-align: center;
+	padding: 0;
+}
+
+.innerCard img {
+	object-fit: cover;
+	width: 10%;
+	border-radius: 50%;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.innerCard p {
+	font-size: 1.2rem;
+	font-weight: 500;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+	font-family: "Lora", serif;
+	line-height: 1.5rem;
+}
+
+#connectTitle {
+	font-size: 1.8rem;
+	text-align: center;
+	color: var(--grey);
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+	font-family: "Lora", serif;
+	margin-bottom: 1rem;
+}
+
+#connectSubtitle {
+	font-size: 1.4rem;
+	color: var(--grey);
+	font-family: "Lora", serif;
+	text-align: center;
+}
+
+.btns {
+	display: flex;
+	gap: 1.5rem;
+	margin-top: 1rem;
+	align-items: center;
+	justify-content: center;
+}
+
+.btns a {
+	text-decoration: none;
+}
+
+.btns .btn {
+	padding: 1rem 2rem;
+	font-size: 1.25rem;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+	font-family: "Poppins", sans-serif;
+}
+
+.btns .btn-primary {
+	background-color: var(--teal);
+	color: var(--beige);
+}
+
+.btns .btn-primary:hover {
+	background-color: #375e60;
+}
+
+.btns .btn-secondary {
+	background-color: var(--clay);
+	color: var(--grey);
+}
+
+.btns .btn-secondary:hover {
+	background-color: #bf8c4d;
+}
+
+@media screen and (min-width: 768px) {
+	.aboutSection {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 20px;
+	}
+
+	.innerCard {
+		padding: 3rem;
+		gap: 20px;
+	}
+
+	.innerCard img {
+		width: 120px;
+		height: 120px;
+	}
+
+	.innerCard p {
+		font-size: 1.4rem;
+	}
+}

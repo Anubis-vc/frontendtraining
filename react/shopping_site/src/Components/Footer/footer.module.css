@@ -1,0 +1,61 @@
+.footer {
+	background-color: #2d4c4a;
+	color: #a0aec0;
+	padding: 1rem 0;
+	font-family: "Lora", serif;
+}
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0.5rem 0;
+}
+
+.socialIcons {
+	display: flex;
+	justify-content: center;
+	gap: 2.5rem;
+	margin-bottom: 0.75rem;
+}
+
+.socialLink {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 1.5rem;
+	height: 1.5rem;
+	color: #a0aec0;
+	transition: all 0.2s ease;
+}
+
+.socialLink img {
+	filter: invert(85%) sepia(98%) saturate(2489%) hue-rotate(176deg) brightness(86%) contrast(71%);
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+.socialLink:hover {
+	color: white;
+	scale: 1.04;
+}
+
+.logoSection {
+	text-align: center;
+}
+
+.logo {
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+
+.copyright {
+	font-size: 0.875rem;
+	margin-top: 0.25rem;
+}
+
+@media (max-width: 640px) {
+	.socialIcons {
+		gap: 1rem;
+	}
+}

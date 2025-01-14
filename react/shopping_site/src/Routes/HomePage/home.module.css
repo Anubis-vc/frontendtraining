@@ -67,6 +67,7 @@
 	padding: 2rem 2rem 4rem 2rem;
 	background-color: var(--beige);
 	max-width: 75%;
+	border-top: 4px solid var(--green);
 }
 
 .categories h2 {

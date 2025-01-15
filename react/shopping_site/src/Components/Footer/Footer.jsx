@@ -33,6 +33,7 @@ function Footer () {
 							href={link.href}
 							className={styles.socialLink}
 							aria-label={link.label}
+							target="_blank"
 						>
 							<img src={link.svg} alt={link.label} />
 						</a>

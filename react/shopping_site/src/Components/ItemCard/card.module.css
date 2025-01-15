@@ -1,0 +1,67 @@
+.card {
+	background-color: white;
+	border-radius: 4px;
+	color: var(--teal);
+	padding: 1.5rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	cursor: pointer;
+	transition: 0.3s border ease;
+	border: 2px solid transparent;
+}
+
+.card:hover {
+	box-shadow: rgba(0, 0, 0, 0.3) 0px 8px 16px,
+		rgba(0, 0, 0, 0.2) 0px -2px 0px inset;
+	border-color: var(--teal);
+}
+
+.image {
+	max-width: 80%;
+	height: 12rem;
+	border-radius: 4px;
+	mix-blend-mode: darken;
+}
+
+.title {
+	font-size: 1.2rem;
+	text-align: center;
+	font-family: "Lora", serif;
+	font-weight: 500;
+	margin-top: 0.5rem;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+	margin-bottom: 0.5rem;
+}
+
+.card div {
+	display: flex;
+	align-items: center;
+}
+
+.price {
+	font-family: "Poppins", sans-serif;
+	font-size: 1.25rem;
+	font-weight: 700;
+}
+
+.btn {
+	margin-top: 1rem;
+	width: 75%;
+	cursor: pointer;
+	padding: 0.5rem;
+	font-size: 1.4rem;
+	font-family: "Poppins", sans-serif;
+	color: white;
+	background-color: var(--teal);
+	border: 2px solid transparent;
+	border-radius: 4px;
+	transition: all 0.2s ease;
+}
+
+.btn:hover {
+	background-color: var(--teal);
+	color: var(--beige);
+	border-color: var(--clay);
+}

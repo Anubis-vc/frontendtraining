@@ -6,7 +6,7 @@ import landing from "../../assets/landing.jpg";
 import speakers from "../../assets/speakers.jpg";
 import mens from "../../assets/mens.jpg";
 import womens from "../../assets/womens.jpg";
-import jewlery from "../../assets/jewlery.jpg";
+import jewelry from "../../assets/jewlery.jpg";
 
 function Home () {
 	const categories = [
@@ -18,8 +18,8 @@ function Home () {
 		},
 		{
 			id: 2,
-			name: "Jewlery",
-			image: jewlery,
+			name: "Jewelry",
+			image: jewelry,
 			link: "/store",
 		},
 		{

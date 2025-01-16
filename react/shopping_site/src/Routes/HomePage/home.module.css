@@ -22,6 +22,7 @@
 }
 
 .landing-content p {
+	max-width: 1200px;
 	text-wrap: balance;
 	text-align: center;
 	font-size: 2rem;
@@ -66,7 +67,7 @@
 .categories {
 	padding: 2rem 2rem 4rem 2rem;
 	background-color: var(--beige);
-	max-width: 75%;
+	max-width: 1000px;
 	border-top: 4px solid var(--green);
 }
 

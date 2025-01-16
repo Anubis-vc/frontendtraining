@@ -5,14 +5,28 @@ function Category ({
 	link,
 	name,
 	image,
+	setCategory
 }) {
+
+	const handleClick = () => {
+		const map = {
+			"Electronics": "electronics",
+			"Jewelry": "jewelry",
+			"Men's Clothing": "mens",
+			"Women's Clothing": "womens",
+		}
+
+		setCategory(map[name]);
+		window.scrollTo(0, 0);
+	}
+
 	return (
 		<div className={styles["category-card"]}>
 			<img src={image} alt={name} />
 			<div className={styles["category-card-content"]}>
 				<h3>{name}</h3>
 				<Link to={link}>
-					<button>Explore</button>
+					<button onClick={handleClick}>Explore</button>
 				</Link>
 			</div>
 		</div>

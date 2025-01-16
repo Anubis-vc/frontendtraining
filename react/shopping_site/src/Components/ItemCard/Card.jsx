@@ -30,7 +30,7 @@ function Card ({
 		}
 	};
 
-	const handleClick = () => {
+	const handleClick = e => {
 		if (e.target.localName !== "button") {
 			if (e.target.parentNode.localName !== "button") {
 				navigate("/product/" + id);

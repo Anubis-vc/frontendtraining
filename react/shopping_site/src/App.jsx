@@ -6,10 +6,13 @@ import Home from './Routes/HomePage/Home';
 import About from './Routes/About/About';
 import Contact from './Routes/Contact/Contact';
 import Store from './Routes/Store/Store';
+import Product from './Routes/ProductPage/Product';
 
 function App() {
   const [cart, setCart] = useState([]);
   const [products, setProducts] = useState([]);
+  const [category, setCategory] = useState("all");
+  const [sort, setSort] = useState("name");
 
   /* Going to useEffect once on all data and then filter
     data on client-side for best performance because of 
@@ -37,14 +40,25 @@ function App() {
     <BrowserRouter>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home setCategory={setCategory}/>} />
         <Route path="about" element={<About />} />
         <Route path="contact" element={<Contact />} />
+        <Route path="product/:id" element={
+          <Product
+            data={products}
+            cart={cart}
+            setCart={setCart}
+          />
+        }/>
         <Route path="store" element={
           <Store
             data={products}
             cart={cart}
+            category={category}
+            sort={sort}
             setCart={setCart}
+            setCategory={setCategory}
+            setSort={setSort}
           />
         } />
       </Routes>

@@ -1,14 +1,16 @@
-import { useState } from "react";
+import { useEffect } from "react";
 import styles from "./store.module.css";
 import Card from "../../Components/ItemCard/Card";
 
 function Store ({
 	cart,
 	data,
+	category,
+	sort,
 	setCart,
+	setCategory,
+	setSort,
 }) {
-	const [category, setCategory] = useState("all");
-  	const [sort, setSort] = useState("name");
 
 	if (!data || data.length === 0) {
 		return <div>Loading Products...</div>;

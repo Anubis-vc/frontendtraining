@@ -8,7 +8,7 @@ import mens from "../../assets/mens.jpg";
 import womens from "../../assets/womens.jpg";
 import jewelry from "../../assets/jewlery.jpg";
 
-function Home () {
+function Home ( {setCategory}) {
 	const categories = [
 		{
 			id: 1,
@@ -68,6 +68,7 @@ function Home () {
 							name={x.name}
 							image={x.image}
 							link={x.link}
+							setCategory={setCategory}
 						/>
 					))}
 				</div>

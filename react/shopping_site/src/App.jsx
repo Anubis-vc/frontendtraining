@@ -38,7 +38,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Navbar />
+      <Navbar cart={cart}/>
       <Routes>
         <Route path="/" element={<Home setCategory={setCategory}/>} />
         <Route path="about" element={<About />} />

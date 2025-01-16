@@ -1,0 +1,23 @@
+.cartBtn {
+	border: none;
+	width: 3.5rem;
+	height: 100%;
+	cursor: pointer;
+	background-color: #2d4c4a;
+	transition: 0.3s all;
+	position: relative;
+}
+
+.cartBtn img {
+	width: 60%;
+	filter: invert(87%) sepia(4%) saturate(572%) hue-rotate(344deg) brightness(113%) contrast(92%);
+}
+
+.cartCount {
+	position: absolute;
+	bottom: 15%;
+	left: 10%;
+	transform: translate(-50%, 50%);
+	color: var(--beige);
+	padding: 0rem 0.2rem;
+}

@@ -1,7 +1,8 @@
 import { NavLink } from "react-router-dom";
+import CartBtn from "../Components/CartBtn/CartBtn";
 import logo from "../assets/logo.png";
 
-const Navbar = () => {
+const Navbar = ( { cart }) => {
 	return (
 		<nav>
 			<NavLink className="logo-link" to="/">
@@ -29,6 +30,9 @@ const Navbar = () => {
 					</NavLink>
 				</li>
 			</ul>
+			<NavLink to="cart">
+				<CartBtn cart={cart}/>
+			</NavLink>
 		</nav>
 	);
 };

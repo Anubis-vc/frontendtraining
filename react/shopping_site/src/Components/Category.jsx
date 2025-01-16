@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import styles from "../Routes/HomePage/home.module.css"
+import styles from "../Routes/HomePage/home.module.css";
 
 function Category ({
 	link,

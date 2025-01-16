@@ -1,0 +1,84 @@
+.itemContainer {
+	background: white;
+	width: 100%;
+	display: flex;
+	padding: 1rem;
+	align-items: center;
+	border: 2px solid var(--teal);
+	border-radius: 8px;
+	position: relative;
+}
+
+.imageContainer {
+	flex: 0 0 125px;
+    height: 125px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	border-bottom: 2px solid var(--teal);
+	border-right: 2px solid var(--teal);
+	border-radius: 4px;
+	background: white;
+	padding: 0.5rem;
+}
+
+.itemContainer h3 {
+	width: 90%;
+}
+
+.imageContainer img {
+	height: 100%;
+	object-fit: scale-down;
+}
+
+.descContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	margin-left: 1rem;
+	justify-content: space-between;
+	gap: 1rem;
+}
+
+.itemContainer button {
+	position: absolute;
+	top: 1rem;
+	right: 1.5rem;
+	cursor: pointer;
+	background: none;
+	border: none;
+	color: #C70000;
+	font-size: 1.15rem;
+	font-weight: 600;
+}
+
+.descBottom {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.quantityContainer {
+	width: 25%;
+	margin-bottom: 0;
+}
+
+.quantityContainer input {
+	width: 100%;
+	appearance: none;
+	border: 1px solid var(--teal);
+	padding: 0.5rem;
+	border-radius: 2px;
+	font-size: 1rem;
+	text-align: center;
+}
+
+.price {
+	border: 1px solid var(--teal);
+	border-radius: 2px;
+}
+
+.total {
+	font-size: 1.25rem;
+	font-weight: 600;
+}

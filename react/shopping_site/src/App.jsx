@@ -7,6 +7,7 @@ import About from './Routes/About/About';
 import Contact from './Routes/Contact/Contact';
 import Store from './Routes/Store/Store';
 import Product from './Routes/ProductPage/Product';
+import Cart from './Routes/Cart/Cart';
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -61,6 +62,12 @@ function App() {
             setSort={setSort}
           />
         } />
+        <Route path="cart" element={
+          <Cart
+            cart={cart}
+            setCart={setCart}
+          />
+        }/>
       </Routes>
       <Footer />
     </BrowserRouter>

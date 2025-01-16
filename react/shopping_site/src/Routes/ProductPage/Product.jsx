@@ -65,6 +65,7 @@ function Product({ data, cart, setCart }) {
 						alt={product.title}
 					/>
 					</div>
+					
 					<div className={styles.descContainer}>
 						<h1>{product.title}</h1>
 						<div className={styles.aside}>

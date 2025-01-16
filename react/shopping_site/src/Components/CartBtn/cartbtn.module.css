@@ -6,6 +6,8 @@
 	background-color: #2d4c4a;
 	transition: 0.3s all;
 	position: relative;
+	align-items: center;
+	justify-content: center;
 }
 
 .cartBtn img {
@@ -14,10 +16,17 @@
 }
 
 .cartCount {
+	display: flex;
+	border-radius: 50%;
+	width: 1.25rem;
+	height: 1.25rem;
+	background-color: var(--beige);
 	position: absolute;
-	bottom: 15%;
+	bottom: 20%;
 	left: 10%;
 	transform: translate(-50%, 50%);
-	color: var(--beige);
-	padding: 0rem 0.2rem;
+	color: var(--grey);
+	text-align: center;
+	align-items: center;
+	justify-content: center;
 }

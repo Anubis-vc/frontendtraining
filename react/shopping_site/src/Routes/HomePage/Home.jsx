@@ -6,7 +6,7 @@ import landing from "../../assets/landing.jpg";
 import speakers from "../../assets/speakers.jpg";
 import mens from "../../assets/mens.jpg";
 import womens from "../../assets/womens.jpg";
-import jewelry from "../../assets/jewlery.jpg";
+import jewelry from "../../assets/jewelry.jpg";
 
 function Home ( {setCategory}) {
 	const categories = [
@@ -61,7 +61,7 @@ function Home ( {setCategory}) {
 
 			<section className={styles.categories}>
 				<h2>Shop by Category</h2>
-				<div className={styles['category-grid']}>
+				<div className={styles.categoryContainer}>
 					{categories.map(x => (
 						<Category
 							key={x.id}

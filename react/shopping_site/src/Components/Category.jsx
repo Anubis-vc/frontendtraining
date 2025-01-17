@@ -22,13 +22,16 @@ function Category ({
 
 	return (
 		<div className={styles["category-card"]}>
-			<img src={image} alt={name} />
-			<div className={styles["category-card-content"]}>
-				<h3>{name}</h3>
-				<Link to={link}>
-					<button onClick={handleClick}>Explore</button>
-				</Link>
-			</div>
+			<Link to={link} className={styles.imageContainer} onClick={handleClick}>
+				<img src={image} alt={name} />
+				<div className={styles.overlay}>
+					<div className={styles.text}>Shop</div>
+				</div>
+			</Link>
+			<p>{name}</p>
+			<Link to={link}>
+				<button onClick={handleClick}>Shop</button>
+			</Link>
 		</div>
 	);
 };

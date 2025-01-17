@@ -67,6 +67,7 @@
 .categories {
 	padding: 2rem 2rem 4rem 2rem;
 	background-color: var(--beige);
+	width: 90%;
 	max-width: 1000px;
 	border-top: 4px solid var(--green);
 }
@@ -79,61 +80,82 @@
 	font-family: "Lora", serif;
 }
 
-.category-grid {
+.categoryContainer {
 	display: grid;
-	grid-template-columns: 1fr 1fr; /* Define two equal columns */
-  	grid-template-rows: 1fr 1fr; /* Define two equal rows */
+	grid-template-columns: repeat(4, 1fr);
 	gap: 2rem;
 }
 
 .category-card {
-	position: relative;
+	width: 100%;
+	height: 100%;
 	overflow: hidden;
 	border-radius: 10px;
-	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-	transition: all 0.3s ease;
 }
 
-.category-card:hover {
-	scale: 1.05;
+.imageContainer {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 60%;
 }
 
 .category-card img {
 	width: 100%;
-	height: auto;
-	display: block;
+	height: 100%;
+	border-radius: 10px;
+	object-fit: cover;
+	object-position: center;
+	transition: all 0.3s ease;
+}
+
+.overlay {
+	position: absolute;
+	opacity: 0;
+	top: 0;
+  	left: 0;
+  	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: opacity 0.3s ease;
 	border-radius: 10px;
 }
 
-.category-card-content {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	padding: 1.5rem;
-	background: rgba(0, 0, 0, 0.5);
-	color: var(--beige);
+.imageContainer:hover .overlay {
+	opacity: 1
+}
+
+.text {
+	color: white;
+	font-size: 1.25rem;
+	text-decoration: underline;
+	font-weight: 500;
+}
+
+.category-card p {
+	font-weight: 700;
+	font-size: 1.25rem;
+	margin-top: 1rem;
+	margin-bottom: 0.75rem;
+}
+
+.category-card button {
+	width: 40%;
+	padding: 0.75rem 1rem;
 	text-align: center;
-}
-
-.category-card-content h3 {
-	font-size: 2rem;
-	margin-bottom: 0.5rem;
-	font-family: "Lora", serif;
-}
-
-.category-card-content button {
-	padding: 0.8rem 1.6rem;
 	background-color: var(--teal);
 	color: var(--beige);
 	border: none;
-	border-radius: 5px;
-	font-size: 1.5rem;
+	border-radius: 20px;
+	font-size: 0.85rem;
 	cursor: pointer;
 	transition: background-color 0.3s ease;
 	font-family: "Poppins", sans-serif;
 }
 
-.category-card-content button:hover {
+.category-card button:hover {
 	background-color: #375e60;
 }

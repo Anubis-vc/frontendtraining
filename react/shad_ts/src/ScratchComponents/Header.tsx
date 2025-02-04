@@ -1,4 +1,3 @@
-import React from 'react'
 import { SocialIcon } from 'react-social-icons'
 function Header() {
   return (
@@ -14,7 +13,7 @@ function Header() {
 				url="https://www.linkedin.com/in/vedchugh/"
 			/>
 		</div>
-		<h1 className='text-4xl'>
+		<h1 className='text-5xl'>
 			Ved's Frontend
 		</h1>
 		<div className='space-x-5'>

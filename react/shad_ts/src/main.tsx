@@ -2,10 +2,10 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.tsx'
-import data from "../data.json"
+import { data } from "./data.ts";
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <App projects={data.data}/>
+    <App projects={data}/>
   </StrictMode>,
 )

@@ -15,13 +15,13 @@ import {
   CarouselPrevious,
 } from "./Components/Carousel"
 import Marquee from "react-fast-marquee";
-import temp from "./assets/collage.png";
 
 interface Project {
   title: string;
   desc: string;
   skills: string[];
   url: string;
+  image: string;
 }
 
 type Props = {
@@ -32,25 +32,25 @@ function App({ projects }: Props) {
   return (
     <div className='h-screen w-screen bg-inherit'>
       <Header />
-      <section className='w-screen h-screen flex justify-center items-center'>
-        <Carousel className='w-[75%] max-w-[1000px] h-full flex justify-center items-center p-2'>
+      <section className='w-screen min-h-screen flex justify-center items-center px-2'>
+        <Carousel className='w-[75%] max-w-[1000px] h-[80vh] max-h-[750px] md:h-full flex justify-center items-center md:p-2'>
           <CarouselContent>
             {projects.map((project, i) => (
               <CarouselItem key={i}>
-                <Card key={i} className='w-full h-full relative flex justify-center items-center'>
+                <Card className='w-full max-h-[750px] h-full relative flex flex-col md:flex-row justify-start md:justify-center items-center'>
                   <img
-                    src={temp}
+                    src={project.image}
                     alt="project"
-                    className='w-[30%] h-full object-cover rounded-l-lg'
+                    className='w-full h-[155px] md:w-[30%] md:h-full object-cover rounded-t md:rounded-l'
                   />
                   <div>
-                    <CardHeader className='w-full h-full'>
-                      <CardTitle className='md:text-2xl'>{project.title}</CardTitle>
-                      <CardDescription className='md:text-md'>{project.desc}</CardDescription>
+                    <CardHeader className='w-full md:h-full'>
+                      <CardTitle className='text-lg md:text-2xl'>{project.title}</CardTitle>
+                      <CardDescription className='lg:text-lg'>{project.desc}</CardDescription>
                     </CardHeader>
                     <CardContent>
                       <p className='font-bold text-md md:text-lg'>Skills:</p>
-                      <ul className='list-disc px-5'>
+                      <ul className='text-sm md:text-md lg:text-lg list-disc px-5'>
                         {project.skills.map((skill) =>
                           <li key={skill}>{skill}</li>
                         )}
@@ -58,8 +58,8 @@ function App({ projects }: Props) {
                     </CardContent>
                   </div>
                   <Button
-                    className='absolute right-6 bottom-6'
-                    variant="reverse"
+                    className='h-8 p-2 md:px-4 md:h-10 absolute right-3 bottom-3 md:right-6 md:bottom-6'
+                    variant="default"
                   >
                     <a href={project.url} target='_blank'>To Content</a>
                   </Button>
@@ -72,15 +72,15 @@ function App({ projects }: Props) {
         </Carousel>
       </section>
       <Marquee
-        className='fixed bottom-6 w-screen bg-[#88aaee]'
+        className='fixed bottom-5 md:bottom-6 w-screen bg-[#88aaee]'
         pauseOnHover={true}
       >
         <a href="mailto:vchughcodes@gmail.com">
-          <div className='w-screen flex justify-evenly'>
+          <div className='w-screen flex justify-around'>
             <div>
               Contact me at vchughcodes@gmail.com
             </div>
-            <div>
+            <div className='hidden md:block'>
               Contact me at vchughcodes@gmail.com
             </div>
           </div>

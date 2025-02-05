@@ -1,8 +1,8 @@
 import { SocialIcon } from 'react-social-icons'
 function Header() {
   return (
-	<header className='flex items-center justify-around top-0 
-	h-16 md:h-20 z-20 p-5 border-b-2 shadow-[0px_6px_0px_#000]'>
+	<header className='fixed w-screen flex items-center justify-around top-0 
+	h-16 md:h-20 z-20 p-5 border-b-2 shadow-[4px_4px_0px_0px_black]'>
 		<div className='space-x-5'>
 			<SocialIcon
 				target='_blank'

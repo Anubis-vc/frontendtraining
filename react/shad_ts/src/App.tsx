@@ -41,7 +41,7 @@ function App({ projects }: Props) {
                   <img
                     src={project.image}
                     alt="project"
-                    className='w-full h-[155px] md:w-[30%] md:h-full object-cover rounded-t md:rounded-l'
+                    className='w-full h-[155px] md:h-full object-cover rounded-t md:rounded-l'
                   />
                   <div>
                     <CardHeader className='w-full md:h-full'>

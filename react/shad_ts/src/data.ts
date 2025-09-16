@@ -3,6 +3,7 @@ import countdown from "./assets/CountdownSite.png"
 import frontend from "./assets/FrontendHosting.png"
 import port2 from "./assets/port2.png"
 import store from "./assets/StorefrontSite.png"
+import Lubezki from "./assets/Lubezki.png"
 
 export const data = [
 	{
@@ -11,6 +12,13 @@ export const data = [
 		"skills": ["Next.js", "TypeScript", "React", "Sanity", "TailwindCSS"],
 		"url": "https://www.vedchugh.info",
 		"image": port2
+	},
+	{
+		"title": "Lubezki Gallery - AI Powered Film Feeback",
+		"desc": "Again, combined my passion for film and coding to create a unique platform that leverages AI to provide photographers with detailed, constructive feedback on their work. This project showcases my ability to integrate advanced technologies into user-friendly applications, enhancing the creative process through innovative solutions.",
+		"skills": ["TypeScript", "LLMs", "FastAPI", "Python", "React"],
+		"url": "https://lubezki.vedchugh.info",
+		"image": Lubezki
 	},
 	{
 		"title": "Storefront Model",
